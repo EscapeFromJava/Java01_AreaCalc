@@ -52,11 +52,11 @@ public class Main {
     }
 }
 
-interface Calc {
+interface ICalc {
     double GetArea();
 }
 
-class Circle implements Calc {
+class Circle implements ICalc {
     private double _radius;
 
     public Circle(double _radius) {
@@ -69,7 +69,7 @@ class Circle implements Calc {
     }
 }
 
-class Triangle implements Calc {
+class Triangle implements ICalc {
 
     private double _edge1;
     private double _edge2;
@@ -88,7 +88,7 @@ class Triangle implements Calc {
     }
 }
 
-class Rectangle implements Calc {
+class Rectangle implements ICalc {
     private double _edge1;
     private double _edge2;
 
