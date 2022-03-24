@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -6,13 +7,14 @@ public class Main {
     public static void main(String[] args) {
         while (true) {
             System.out.println("Выберите тип фигуры:");
-            System.out.println("[1] - окружность");
-            System.out.println("[2] - треугольник");
-            System.out.println("[3] - прямоугольник");
+
+            for (Figure f : Figure.values())
+                System.out.println("[" + f.ordinal() + "] - " + f);
+
             int temp = scan.nextInt();
 
             switch (temp) {
-                case 1: {
+                case 0: {
                     System.out.println("Введите радиус окружности: ");
                     double radius = scan.nextDouble();
                     if (radius > 0) {
@@ -21,7 +23,7 @@ public class Main {
                     }
                     break;
                 }
-                case 2: {
+                case 1: {
                     System.out.println("Введите 3 грани треугольника: ");
                     double edge1 = scan.nextDouble();
                     double edge2 = scan.nextDouble();
@@ -35,7 +37,7 @@ public class Main {
                     }
                     break;
                 }
-                case 3: {
+                case 2: {
                     System.out.println("Введите 2 грани прямоугольника: ");
                     double edge1 = scan.nextDouble();
                     double edge2 = scan.nextDouble();
@@ -50,6 +52,12 @@ public class Main {
             }
         }
     }
+}
+
+enum Figure{
+    окружность,
+    треугольник,
+    прямоугольник
 }
 
 interface ICalc {
